@@ -1,0 +1,37 @@
+# Project: 3.1
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++ -std=c++11
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = Discipline.o test.o Graduation.o PostGraduation.o
+LINKOBJ  = Discipline.o test.o Graduation.o PostGraduation.o
+LIBS     = -L"D:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"D:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"D:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"D:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"D:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"D:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"D:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = 3.1.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+Discipline.o: Discipline.cpp
+	$(CPP) -c Discipline.cpp -o Discipline.o $(CXXFLAGS)
+
+test.o: test.cpp
+	$(CPP) -c test.cpp -o test.o $(CXXFLAGS)
+
+Graduation.o: Graduation.cpp
+	$(CPP) -c Graduation.cpp -o Graduation.o $(CXXFLAGS)
+
+PostGraduation.o: PostGraduation.cpp
+	$(CPP) -c PostGraduation.cpp -o PostGraduation.o $(CXXFLAGS)
