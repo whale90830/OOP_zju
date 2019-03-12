@@ -20,3 +20,4 @@
   - 6.3 Template_GPA
 - Assignment07
 - Project：Digit Recognition
+- Notes
